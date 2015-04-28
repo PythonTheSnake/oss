@@ -3,7 +3,7 @@
   apt: name=git-core update_cache=yes state=present
 - name: Install mercurial
   apt: name=mercurial update_cache=yes state=present
-- name: Install Go Version Manager
-  shell: wget -O - https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer | bash
+- name: Install python-software-properties requirement
+  apt: name=python-software-properties update_cache=yes state=present
 - name: Install Go
-  shell: $HOME/.gvm/scripts/gvm install
+  apt: name=golang update_cache=yes state=present
