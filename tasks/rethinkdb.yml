@@ -1,0 +1,7 @@
+---
+- name: "Adding the RethinkDB repository"
+  shell: . /etc/lsb-release && echo "deb http://download.rethinkdb.com/apt $DISTRIB_CODENAME main" | sudo tee /etc/apt/sources.list.d/rethinkdb.list
+- name: "Adding RethinkDB's GPG key"
+  apt_key: url=http://download.rethinkdb.com/apt/pubkey.gpg state=present
+- name: "Install RethinkDB using apt"
+  apt: name=rethinkdb update_cache=yes state=present

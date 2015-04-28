@@ -1,0 +1,9 @@
+---
+- name: Install git
+  apt: name=git-core update_cache=yes state=present
+- name: Install mercurial
+  apt: name=mercurial update_cache=yes state=present
+- name: Install Go Version Manager
+  shell: wget -O - https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer | bash
+- name: Install Go
+  shell: $HOME/.gvm/scripts/gvm install

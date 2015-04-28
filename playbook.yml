@@ -1,0 +1,25 @@
+- hosts: 127.0.0.1
+  connection: local
+  sudo: true
+  # to refactor using roles
+  tasks:
+    - name: "Installing RethinkDB"
+      include: tasks/rethinkdb.yml
+
+    - name: "Installing Go"
+      include: tasks/go.yml
+
+    - name: "Installing NSQ"
+      command: echo "DEB installed nsq"
+
+    - name: "Installing API"
+      include: tasks/api.yml
+      when: lookup("env", "DEV") != "api"
+
+    - name: "Installing mailer"
+      command: echo "DEB installed mailer"
+      when: lookup("env", "DEV") != "mailer"
+
+    - name: "Installing web"
+      command: echo "DEB installed web"
+      when: lookup("env", "DEV") != "web"
