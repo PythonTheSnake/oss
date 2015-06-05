@@ -1,8 +1,8 @@
 sentry:
   image: sentry
   links:
-    - sentry-postgres
-    - sentry-redis
+    - postgres
+    - redis
 
 postgres:
   image: postgres
