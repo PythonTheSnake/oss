@@ -4,8 +4,8 @@ sentry:
     - sentry-postgres
     - sentry-redis
 
-sentry-postgres:
+postgres:
   image: postgres
 
-sentry-redis:
+redis:
   image: redis
