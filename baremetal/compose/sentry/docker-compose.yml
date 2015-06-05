@@ -1,0 +1,11 @@
+sentry:
+  image: sentry
+  links:
+    - sentry-postgres
+    - sentry-redis
+
+sentry-postgres:
+  image: postgres
+
+sentry-redis:
+  image: redis
