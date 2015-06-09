@@ -119,8 +119,8 @@ email proxy.
 
 ```bash
 # build the image
-git clone https://github.com/lavab/mailer.git
-cd mailer/postfix
+git clone https://github.com/lavab/postfix.git
+cd postfix
 docker build -t "lavab/postfix" .
 
 # run it
@@ -226,7 +226,7 @@ modules:
    a dumb Postfix server that acts as a router for emails.
 
 ```bash
-# build the image. note that we might already have the mailer cloned
+# build the image
 git clone https://github.com/lavab/mailer.git
 cd mailer
 docker build -t "lavab/mailer" .
